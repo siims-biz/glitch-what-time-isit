@@ -24,7 +24,7 @@ document.getElementById("loc").innerHTML+="<span>Locale</span><span>"+d.toLocale
 document.getElementById("loc").innerHTML+="<span>UTC</span><span>"+d.toUTCString()+"</span>";
 document.getElementById("loc").innerHTML+="<span>ISO</span><span>"+d.toISOString()+"</span>";    
 
-currTime=d.toLocaleString("en",{hourCycle:'h24'});
+currTime=d.toLocaleString("en",{hourCycle:'h23'});
       
 for (i = -12; i < 14; i++) {
   let c = new Date(d.getTime() + 3600000 * i);
@@ -32,6 +32,7 @@ for (i = -12; i < 14; i++) {
   if(k>=0) {k="+"+k;}
   let gmtTime=c.toLocaleString("en", {    hourCycle: 'h24',timeZone:'Europe/London'  });
   if(currTime==gmtTime) { gmtTime+=' Your (browser) local time zone';}
+  if(k== -5) { gmTime+=' ET,EST,EDT';}
   document.getElementById("gmt").innerHTML += "<span>GMT " + k + "</span><span>" + gmtTime + "</span>";
 
 }
