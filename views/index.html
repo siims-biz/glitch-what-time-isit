@@ -34,6 +34,7 @@ for (i = -12; i < 14; i++) {
   if(currTime==gmtTime) { gmtTime+=' Your (browser) local time zone';}
   if(i == -8) { gmtTime+=' PT,PST,PDT, San Francisco, USA';}
   if(i == -5) { gmtTime+=' ET,EST,EDT, New York, USA';}
+  if(i == -3) { gmtTime+=' BRT, Rio de Janeiro, Brazil';}
   document.getElementById("gmt").innerHTML += "<span>GMT " + k + "</span><span>" + gmtTime + "</span>";
 
 }
