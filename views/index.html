@@ -5,7 +5,8 @@
   <meta http-equiv="refresh" content="20">
 <style>
   body { margin-left:12px;}
-#loc, #gmt { display: grid; grid-template-columns: fit-content(200px) auto;}
+#loc { display: grid; grid-template-columns: fit-content(200px)  fit-content(200px) auto;}
+#gmt { display: grid; grid-template-columns: fit-content(200px) auto;}
 #intl { margin-top:5px;display: grid; grid-template-columns: fit-content(200px) fit-content(200px) auto;}
 span { margin-right:5px;}
 </style>
@@ -20,9 +21,9 @@ span { margin-right:5px;}
 </body>
  <script language="javascript" defer>
   var d=new Date();
-document.getElementById("loc").innerHTML+="<span>Locale</span><span>"+d.toLocaleString()+"</span>";
-document.getElementById("loc").innerHTML+="<span>UTC</span><span>"+d.toUTCString()+"</span>";
-document.getElementById("loc").innerHTML+="<span>ISO</span><span>"+d.toISOString()+"</span>";    
+document.getElementById("loc").innerHTML+="<span>Locale</span><span>"+d.toLocaleString()+"</span><span>Date.toLocaleString();</span>\n";
+document.getElementById("loc").innerHTML+="<span>UTC</span><span>"+d.toUTCString()+"</span><span>Date.toUTCString();</span>\n";
+document.getElementById("loc").innerHTML+="<span>ISO</span><span>"+d.toISOString()+"</span><span>Date.toISOString();</span>\n";    
 
 currTime=d.toLocaleString("en",{hourCycle:'h23'});
       
@@ -40,6 +41,10 @@ for (i = -12; i < 14; i++) {
   document.getElementById("gmt").innerHTML += "<span>GMT " + k + "</span><span>" + gmtTime + "</span>";
 
 }
-      
+console.log(isSummer(););
+   function isSummer() {
+     var d=new Date();
+     
+   }
   </script>
 </html>
