@@ -21,6 +21,7 @@ span { margin-right:5px;}
 <h1>Time Zone Season</h1>
 <section id="season"></section>
 <h1>Acknowledgements</h1>
+<section id="thankyous">
 <time datetime="2021-01-30">30 Jan 2021 </time>Favicon Generator<br>
 https://favicon.io/favicon-generator<br>
 <time datetime="2021-01-30">30 Jan 2021 </time>Unicode Clock Selector<br>
@@ -29,9 +30,13 @@ http://xahlee.info/comp/unicode_clocks.html<br>
 https://glitch.com<br>
 <time datetime="2021-01-30">30 Jan 2021 </time>Web Author of this Page<br>
 https://github.com/matjung<br>
-    
+</section>
+<h1>Further Readings</h1>
+<time datetime="2021-01-30">30 Jan 2021 </time>https://en.wikipedia.org/wiki/Greenwich_Mean_Time<br>
+<time datetime="2021-01-30">30 Jan 2021 </time>https://greenwichmeantime.com<br>
+<time datetime="2021-01-30">30 Jan 2021 </time>https://www.timeanddate.com/worldclock<br>    
 </main>
-</body>
+
  <script language="javascript" defer>
   var d=new Date();
 document.getElementById("loc").innerHTML+="<span>Locale</span><span>"+d.toLocaleString()+"</span><span>Date.toLocaleString();</span>\n";
@@ -69,4 +74,5 @@ for (i = -12; i < 14; i++) {
      return (d.toLocaleString("en",options).includes("Summer")) ? true : false
    }
   </script>
+</body>  
 </html>
