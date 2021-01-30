@@ -16,7 +16,9 @@ span { margin-right:5px;}
   <main>
 <section id="loc"></section>
 <h1>Time in GMT Time Zones (locale en)</h1>
-<section id="gmt"></section>    
+<section id="gmt"></section>
+<h1>Time Zone Season</h1>
+<section id="season"></section>    
 </main>
 </body>
  <script language="javascript" defer>
@@ -24,9 +26,9 @@ span { margin-right:5px;}
 document.getElementById("loc").innerHTML+="<span>Locale</span><span>"+d.toLocaleString()+"</span><span>Date.toLocaleString();</span>\n";
 document.getElementById("loc").innerHTML+="<span>UTC</span><span>"+d.toUTCString()+"</span><span>Date.toUTCString();</span>\n";
 document.getElementById("loc").innerHTML+="<span>ISO</span><span>"+d.toISOString()+"</span><span>Date.toISOString();</span>\n";    
-
 currTime=d.toLocaleString("en",{hourCycle:'h23'});
-      
+var summer = isSummer(d);
+document.getElementBy      
 for (i = -12; i < 14; i++) {
   let c = new Date(d.getTime() + 3600000 * i);
   let k=i;
@@ -41,10 +43,9 @@ for (i = -12; i < 14; i++) {
   document.getElementById("gmt").innerHTML += "<span>GMT " + k + "</span><span>" + gmtTime + "</span>";
 
 }
-console.log(isSummer(););
    function isSummer() {
-     var d=new Date();
-     
+     let options = { timeZoneName:'long'}
+     return (d.toLocaleString("en",options).includes("Summer")) ? true : false
    }
   </script>
 </html>
