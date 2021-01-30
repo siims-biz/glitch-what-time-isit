@@ -14,11 +14,11 @@ span { margin-right:5px;}
   <header><h1>What time is it?</h1><h2> ( browser refresh 3 times per minute) </h2></header>
   <main>
 <section id="loc"></section>
-    <h1>Time in GMT Time Zones (locale en)</h1>
+<h1>Time in GMT Time Zones (locale en)</h1>
 <section id="gmt"></section>    
-    </main>
+</main>
 </body>
-    <script language="javascript" defer>
+ <script language="javascript" defer>
   var d=new Date();
 document.getElementById("loc").innerHTML+="<span>Locale</span><span>"+d.toLocaleString()+"</span>";
 document.getElementById("loc").innerHTML+="<span>UTC</span><span>"+d.toUTCString()+"</span>";
@@ -30,7 +30,8 @@ for (i = -12; i < 14; i++) {
   let c = new Date(d.getTime() + 3600000 * i);
   let k=i;
   if(k>=0) {k="+"+k;}
-  let gmtTime=c.toLocaleString("en", {    hourCycle: 'h23',timeZone:'Europe/London'  });
+  let gmtTime=c.toLocaleString("en", { hourCycle: 'h23',timeZone:'Europe/London' });
+  if(i == 1) { gmTime+=' CET, Europe/'}
   if(currTime==gmtTime) { gmtTime+=' Your (browser) local time zone';}
   if(i == -8) { gmtTime+=' PT,PST,PDT, San Francisco, USA';}
   if(i == -5) { gmtTime+=' ET,EST,EDT, New York, USA';}

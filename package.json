@@ -1,7 +1,7 @@
 {
-	"name": "shorturl",
-	"version": "0.0.3",
-	"description": "API project for freeCodeCamp",
+	"name": "what-time-isit",
+	"version": "1.0.0",
+	"description": "API project for what timezone is it",
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js"
@@ -16,14 +16,9 @@
 	"engines": {
 		"node": "12.18.3"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://hyperdev.com/#!/project/welcome-project"
-	},
 	"keywords": [
-		"node",
-		"hyperdev",
-		"express"
+		"gmt",
+		"get time zone string"
 	],
 	"license": "MIT"
 }
