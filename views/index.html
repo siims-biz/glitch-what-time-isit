@@ -27,8 +27,15 @@ document.getElementById("loc").innerHTML+="<span>Locale</span><span>"+d.toLocale
 document.getElementById("loc").innerHTML+="<span>UTC</span><span>"+d.toUTCString()+"</span><span>Date.toUTCString();</span>\n";
 document.getElementById("loc").innerHTML+="<span>ISO</span><span>"+d.toISOString()+"</span><span>Date.toISOString();</span>\n";    
 currTime=d.toLocaleString("en",{hourCycle:'h23'});
-var summer = isSummer(d);
-document.getElementBy      
+switch (isSummer(d)) {
+  case false:
+    document.getElementById("season").innerHTML+="Standard Time ( in Europe it is Winter / in Australia it is Summer)"
+    break;
+  default:
+  document.getElementById("season").innerHTML+="Summer Time ( in Europe it is Summer / in Australia it is Winter)"
+}
+   
+
 for (i = -12; i < 14; i++) {
   let c = new Date(d.getTime() + 3600000 * i);
   let k=i;
