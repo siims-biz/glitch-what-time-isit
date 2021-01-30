@@ -3,9 +3,10 @@
 <head>
   <title>What time is it?</title>
   <meta http-equiv="refresh" content="20">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.glitch.com/40cf2f7c-6130-463b-8039-37aeaf92f6a0%2Ffavicon.ico?v=1612039316291">
 <style>
   body { margin-left:12px;}
-#loc { display: grid; grid-template-columns: fit-content(200px)  fit-content(200px) auto;}
+#loc { display: grid; grid-template-columns: fit-content(200px)  fit-content(250px) auto;}
 #gmt { display: grid; grid-template-columns: fit-content(200px) auto;}
 #intl { margin-top:5px;display: grid; grid-template-columns: fit-content(200px) fit-content(200px) auto;}
 span { margin-right:5px;}
@@ -18,7 +19,16 @@ span { margin-right:5px;}
 <h1>Time in GMT Time Zones (locale en)</h1>
 <section id="gmt"></section>
 <h1>Time Zone Season</h1>
-<section id="season"></section>    
+<section id="season"></section>
+<h1>Acknowledgements</h1>
+<time datetime="2021-01-30">30 Jan 2021</time>Favicon Generator<br>
+https://favicon.io/favicon-generator<br>
+<time datetime="2021-01-30">30 Jan 2021</time>Unicode Clock Selector<br>
+http://xahlee.info/comp/unicode_clocks.html<br>
+<time datetime="2021-01-30">30 Jan 2021</time>Webhoster<br>
+https://glitch.com<br>
+<time datetime="2021-01-30">30 Jan 2021 </time>Web Author of this Page<br>
+https://github.com/matjung<br>    
 </main>
 </body>
  <script language="javascript" defer>
@@ -42,6 +52,7 @@ for (i = -12; i < 14; i++) {
   if(k>=0) {k="+"+k;}
   let gmtTime=c.toLocaleString("en", { hourCycle: 'h23',timeZone:'Europe/London' });
   if(currTime==gmtTime) { gmtTime+=' Your (browser) local time zone';}  
+  if(i == 9) { gmtTime+=' JST, Japan, Tokyo';}
   if(i == 0) { gmtTime+=' GMT, Europe/London, Dublin';}
   if(i == 1) { gmtTime+=' CET, Europe/Amsterdam, Frankfurt, Z&uuml;rich, Rome';}
   if(i == -8) { gmtTime+=' PT,PST,PDT, San Francisco, USA';}
