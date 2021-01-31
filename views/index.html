@@ -9,6 +9,7 @@
 #loc { display: grid; grid-template-columns: fit-content(200px)  fit-content(250px) auto;}
 #gmt { display: grid; grid-template-columns: fit-content(200px) auto;}
 #intl { margin-top:5px;display: grid; grid-template-columns: fit-content(200px) fit-content(200px) auto;}
+  .green { background-color:green;}  
 span { margin-right:5px;}
 </style>
 </head>
@@ -57,7 +58,8 @@ for (i = -12; i < 14; i++) {
   let k=i;
   if(k>=0) {k="+"+k;}
   let gmtTime=c.toLocaleString("en", { hourCycle: 'h23',timeZone:'Europe/London' });
-  if(currTime==gmtTime) { gmtTime+=' Your (browser) local time zone';}  
+  let strClass=false;
+  if(currTime==gmtTime) { gmtTime+=' Your (browser) local time zone';strClass=true;}  
   if(i == 13) { gmtTime+=' NZDT, Auckland, New Zealand';}
   if(i == 9) { gmtTime+=' JST, Japan, Tokyo';}
   if(i == 8) { gmtTime+=' SGT, WPM, Singapore, Kuala Lumpur, Malaysia';}
@@ -66,7 +68,11 @@ for (i = -12; i < 14; i++) {
   if(i == -8) { gmtTime+=' PT,PST,PDT, San Francisco, USA';}
   if(i == -5) { gmtTime+=' ET,EST,EDT, New York, USA';}
   if(i == -3) { gmtTime+=' BRT, Rio de Janeiro, Brazil';}
-  document.getElementById("gmt").innerHTML += "<span>GMT " + k + "</span><span>" + gmtTime + "</span>";
+    if(strClass) {
+    document.getElementById("gmt").innerHTML += "<span class='green'>GMT " + k + "</span><span>" + gmtTime + "</span>";  
+  } else {
+    document.getElementById("gmt").innerHTML += "<span>GMT " + k + "</span><span>" + gmtTime + "</span>";
+  }
 
 }
    function isSummer() {
